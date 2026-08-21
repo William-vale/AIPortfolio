@@ -2,37 +2,59 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-jakarta);
+  --color-background: var(--color-bg-app);
+  --color-foreground: var(--color-text-primary);
+  --color-surface: var(--color-bg-surface);
+  --color-subtle: var(--color-bg-subtle);
+  --color-tint: var(--color-bg-app);
+  --color-secondary: var(--color-text-secondary);
+  --color-muted-foreground: var(--color-text-muted);
+  --color-border: var(--color-border-default);
+  --color-primary: var(--color-primary-600);
+  --color-primary-foreground: var(--color-bg-surface);
+  --color-primary-dark: var(--color-primary-700);
+  --color-primary-soft: #c7d2fe;
+  --color-primary-pale: #eef2ff;
+  --color-secondary-brand: var(--color-secondary-700);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
 :root {
-  --font-heading: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
+  color-scheme: light;
+  --font-heading: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
 
-  /* Peso da Fonte (Font Weight) */
-  --font-weight-bold: 700;
-  --font-weight-medium: 600;
-  --font-weight-regular: 400;
-  --font-weight-caption: 500;
-
-  /* Altura da Linha (Line Height) */
-  --line-height-h1: 1.15;
-  --line-height-h2: 1.2;
-  --line-height-h3: 1.25;
-  --line-height-h4: 1.3;
-  --line-height-body: 1.5;
-  --line-height-body-small: 1.45;
-  --line-height-caption: 1.4;
-  --line-height-button: 1;
-
-  /* Tamanho da Fonte - Mobile (Padrão) */
-  --font-size-h1: 32px;
-  --font-size-h2: 24px;
-  --font-size-h3: 20px;
-  --font-size-h4: 18px;
-  --font-size-body: 16px;
-  --font-size-body-small: 14px;
-  --font-size-caption: 12px;
-  --font-size-button: 14px;
-
-  /* Spacing Tokens */
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-secondary-500: #14b8a6;
+  --color-secondary-700: #0f766e;
+  --color-success-600: #16a34a;
+  --color-error-600: #dc2626;
+  --color-warning-600: #d97706;
+  --color-info-600: #0284c7;
+  --color-bg-app: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-subtle: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-border-default: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -45,83 +67,53 @@
   --space-16: 4rem;
   --space-20: 5rem;
 
-  /* Border Radius Tokens */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-full: 9999px;
-
-  /* Cores Principais */
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-secondary-500: #14b8a6;
-  --color-secondary-700: #0f766e;
-
-  --color-success-600: #16a34a;
-  --color-error-600: #dc2626;
-  --color-warning-600: #d97706;
-  --color-info-600: #0284c7;
-
-  --color-bg-app: #f8fafc;
-  --color-bg-surface: #ffffff;
-  --color-bg-subtle: #f1f5f9;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #334155;
-  --color-text-muted: #64748b;
-  --color-border-default: #e2e8f0;
-  --color-border-strong: #cbd5e1;
-
-  /* Cores de Status */
-  --success-600: #16A34A;
-  --success-bg: #DCFCE7;
-
-  --error-600: #DC2626;
-  --error-bg: #FEE2E2;
-
-  --warning-600: #D97706;
-  --warning-bg: #FEF3C7;
-
-  --info-600: #0284C7; 
-  --info-bg: #E0F2FE;
-}
-
-/* Tamanho da Fonte - Desktop (Telas a partir de 1024px) */
-@media (min-width: 1024px) {
-  :root {
-    --font-size-h1: 40px;
-    --font-size-h2: 32px;
-    --font-size-h3: 24px;
-    /* h4, body, body-small, caption e button mantêm o mesmo tamanho */
-  }
+  /* Nomes alternativos de compatibilidade usados por composições existentes */
+  --background: var(--color-bg-app);
+  --foreground: var(--color-text-primary);
+  --surface: var(--color-bg-surface);
+  --subtle: var(--color-bg-subtle);
+  --tint: var(--color-bg-app);
+  --secondary: var(--color-text-secondary);
+  --muted-foreground: var(--color-text-muted);
+  --border: var(--color-border-default);
+  --primary: var(--color-primary-600);
+  --primary-dark: var(--color-primary-700);
+  --primary-soft: #c7d2fe;
+  --primary-pale: #eef2ff;
+  --secondary-brand: var(--color-secondary-700);
+  --primary-foreground: var(--color-bg-surface);
 }
 
 * {
-  border-color: var(--border);
+  border-color: var(--color-border-default);
 }
 
 html {
-  background: var(--background);
-  scroll-behavior: smooth; 
+  background: var(--color-bg-app);
+  scroll-behavior: smooth;
+  /* Ativa o efeito de rolagem suave ao clicar em links internos na página. */
 }
 
 body {
-  @apply bg-background text-foreground font-sans antialiased;
+  @apply bg-background text-foreground antialiased;
+  /* Configura o fundo e o texto com as cores padrão do tema e suaviza as fontes. */
   margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .font-heading {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-heading);
 }
 
 .font-sans {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 }
 
 ::selection {
   background: #c7d2fe;
-  color: #312e81;
+  color: #4338ca;
 }
 
 .auth-page {
@@ -129,8 +121,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.25rem;
-  background: linear-gradient(180deg, var(--background) 0%, var(--tint) 100%);
+  padding: var(--space-8) var(--space-5);
+  background: var(--color-bg-app);
 }
 
 .auth-shell {
@@ -139,26 +131,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--space-6);
+  /* Define o espaçamento entre os elementos utilizando o valor configurado na variável do tema. */
 }
 
 .auth-brand {
   align-self: flex-start;
-  color: var(--foreground);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: .9rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
 .auth-card {
   width: 100%;
-  padding: 2rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  box-shadow: 0 18px 50px rgba(15, 23, 42, .07);
+  padding: var(--space-6);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
 }
 
 .auth-heading {
@@ -166,106 +158,112 @@ body {
 }
 
 .eyebrow {
-  color: var(--primary);
-  font-size: .75rem;
+  color: var(--color-primary-600);
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .auth-heading h1 {
-  margin: .75rem 0 .5rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.6rem, 4vw, 2rem);
-  letter-spacing: -.04em;
+  margin: var(--space-3) 0 var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
 }
 
 .auth-heading p {
   margin: 0;
-  color: var(--secondary);
-  font-size: .95rem;
-  line-height: 1.55;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 2rem;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
 }
 
 .field-group {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: var(--space-2);
 }
 
 .field-group label {
-  color: var(--foreground);
-  font-size: .875rem;
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
   font-weight: 600;
+  line-height: 1.45;
 }
 
 .field-label-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .field-label-row a,
 .auth-signup a,
 .auth-footer a {
-  color: var(--primary);
+  color: var(--color-primary-600);
   font-weight: 600;
   text-decoration: none;
 }
 
 .field-label-row a {
-  font-size: .8rem;
+  font-size: 0.875rem;
 }
 
 .field-group input {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--border);
-  border-radius: .625rem;
-  background: var(--surface);
-  color: var(--foreground);
-  padding: .8rem .9rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  padding: 0.75rem 0.875rem;
   font: inherit;
   outline: none;
   transition: border-color .2s, box-shadow .2s;
 }
 
 .field-group input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-pale);
+  border-color: var(--color-primary-600);
+  box-shadow: 0 0 0 3px #eef2ff;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: .625rem;
-  padding: .8rem 1rem;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
   font: inherit;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
 }
 
 .button-primary {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--color-primary-600);
+  color: var(--color-bg-surface);
 }
 
 .button-primary:hover {
-  background: var(--primary-dark);
+  background: var(--color-primary-700);
 }
 
 .button:disabled {
   cursor: wait;
+  /* Altera o ponteiro do mouse para o ícone de carregamento, indicando que a página está processando algo. */
   opacity: .7;
 }
 
@@ -275,18 +273,18 @@ body {
 
 .form-message {
   margin: 0;
-  color: var(--secondary-brand);
-  font-size: .85rem;
-  line-height: 1.5;
+  color: var(--color-secondary-700);
+  font-size: 0.875rem;
+  line-height: 1.45;
 }
 
 .auth-divider {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  margin: 1.5rem 0;
-  color: var(--muted-foreground);
-  font-size: .8rem;
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
 }
 
 .auth-divider::before,
@@ -294,45 +292,45 @@ body {
   content: '';
   height: 1px;
   flex: 1;
-  background: var(--border);
+  background: var(--color-border-default);
 }
 
 .auth-signup,
 .auth-footer {
   margin: 0;
   text-align: center;
-  color: var(--secondary);
-  font-size: .875rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
 .auth-footer {
-  color: var(--muted-foreground);
-  font-size: .75rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
   max-width: 26rem;
 }
 
 @media (max-width: 480px) {
   .auth-card {
-    padding: 1.5rem;
+    padding: var(--space-6);
   }
 
   .field-label-row {
     align-items: flex-start;
     flex-direction: column;
-    gap: .25rem;
+    gap: var(--space-1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
+  /* Desativa ou acelera animações e rolagens para usuários que preferem menos movimento na tela. */
   *,
   *::before,
   *::after {
+    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
