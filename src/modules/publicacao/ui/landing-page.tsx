@@ -7,26 +7,26 @@ const features = [
     {
         icon: UserRound,
         title: 'Como funciona',
-        text: 'Cadastre seu perfil uma vez e compartilhe um endereço público.'
+        text: 'Cadastre seu perfil uma vez e publique um endereço público para compartilhar.',
     },
     {
         icon: FolderKanban,
         title: 'Para desenvolvedores',
-        text: 'Unifique experiências, projetos e habilidades em um só lugar.'
+        text: 'Centralize experiências, projetos e habilidades em um único lugar.',
     },
     {
         icon: Globe2,
         title: 'Para recrutadores',
-        text: 'Acesse o portfólio personalizado sem cadastro.'
+        text: 'Acesse o portfólio sem cadastro e receba uma versão contextualizada.',
     },
 ]
 
 export default function Home() {
-    const [menuOpen, SetMenuOpen] = useState(false);
+    const [MenuOpen, setMenuOpen] = useState(false);
+
     return (
-        <main className="min-h-screen ">
+        <main className="min-h-screen">
 
         </main>
-    );
-
+    )
 }
