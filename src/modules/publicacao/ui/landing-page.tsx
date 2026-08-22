@@ -22,11 +22,23 @@ const features = [
 ]
 
 export default function Home() {
-    const [MenuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setmenuOpen] = useState(false);
+    const menuLabel = menuOpen ? 'Fechar menu' : 'Abrir menu';
 
     return (
-        <main className="min-h-screen">
-            OI
+        <main className="min-h-screen bg-background text-foreground">
+            <header className='border-b border-border bg-surface'>
+                <div className='mx-auto flex max-w-[1200px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10'>
+                    <a href="#inicio" className='font-heading text-[18px] font-bold tracking-tight text-foreground'>
+                        aiportfolio.dev
+                    </a>
+                    <button type='button' arial-label={menuLabel} className='flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground md:hidden' onClick={() => setMenuOpen(!menuOpen)}>
+                        {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+
+
+                </div>
+            </header>
         </main>
     )
 }
