@@ -1,4 +1,4 @@
-import { LandingPage } from '../modules/publicacao/ui'
+import { LandingPage } from '../modules/publicacao'
 
 export default function HomePage() {
   return <LandingPage />

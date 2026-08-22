@@ -1,7 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans, Geist } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
-import './global.css'
+import './globals.css'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' })
@@ -21,7 +24,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className="bg-background">
+    <html lang="pt-BR" className={cn("bg-background", "font-sans", geist.variable)}>
       <body className={`${inter.variable} ${plusJakarta.variable}`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
