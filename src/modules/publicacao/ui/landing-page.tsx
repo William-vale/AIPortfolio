@@ -35,9 +35,20 @@ export default function Home() {
                     <button type='button' arial-label={menuLabel} className='flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground md:hidden' onClick={() => setMenuOpen(!menuOpen)}>
                         {menuOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
-
-
+                    <nav className='hidden items-center gap-7 text-sm font-medium text-secondary md:flex' arial-label="Navegação Principal">
+                        <a href="#como-funciona" className="trasition-colors hover:text-primary">Como Funciona</a>
+                        <a href="#precos" className="trasition-colors hover:text-primary">Preços</a>
+                        <a href="#entrar" className="font-semibold text-primary hover:text-dark">Entrar</a>
+                    </nav>
                 </div>
+                {menuOpen && (
+                    <nav className="flex flex-col gap-4 border-t border-border px-5 py-5 text-sm font-medium md:hidden" arial-label="Navegação móvel">
+                        <a href="#entrar" className="font-semibold text-primary hover:text-dark">Entrar</a>
+                        <a href="#precos" className="trasition-colors hover:text-primary">Preços</a>
+                        <a href="#entrar" className="font-semibold text-primary hover:text-dark">Entrar</a>
+
+                    </nav>
+                )}
             </header>
         </main>
     )
