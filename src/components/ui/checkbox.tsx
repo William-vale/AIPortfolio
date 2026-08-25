@@ -25,7 +25,7 @@ function Checkbox({
       <CheckboxPrimitive.Root
         id={checkboxId}
         className={cn(
-          "size-4 rounded border border-border bg-surface",
+          "size-4 rounded border border-border bg-surface flex items-center justify-center",
           "focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20",
           "data-checked:border-primary data-checked:bg-primary",
           "transition-all duration-200",

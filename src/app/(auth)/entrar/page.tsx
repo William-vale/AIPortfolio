@@ -103,7 +103,7 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <BrandIcon icon={siGithub} className="mr-2 size-4" />
+            <BrandIcon icon={siGithub} className="size-4" />
             Continuar com GitHub
           </Button>
 
@@ -114,7 +114,7 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <BrandIcon icon={siGoogle} className="mr-2 size-4" />
+            <BrandIcon icon={siGoogle} className="size-4" />
             Continuar com Google
           </Button>
         </div>
