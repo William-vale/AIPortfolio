@@ -38,7 +38,7 @@ export default function Home() {
                     <nav className='hidden items-center gap-7 text-sm font-medium text-secondary md:flex' arial-label="Navegação Principal">
                         <a href="#como-funciona" className="trasition-colors hover:text-primary">Como Funciona</a>
                         <a href="#precos" className="trasition-colors hover:text-primary">Preços</a>
-                        <a href="#entrar" className="font-semibold text-primary hover:text-dark">Entrar</a>
+                        <a href="entrar" className="font-semibold text-primary hover:text-dark">Entrar</a>
                     </nav>
                 </div>
                 {menuOpen && (

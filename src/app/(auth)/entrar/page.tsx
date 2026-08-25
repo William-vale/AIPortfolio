@@ -4,7 +4,8 @@
 // Permite autenticação via OAuth (GitHub/Google) ou email/senha
 import { useState } from 'react'
 import Link from 'next/link'
-import { Github, Chrome } from 'lucide-react'
+import { siGoogle, siGithub } from "simple-icons";
+import { BrandIcon } from "@/components/ui/brand-icon";
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -30,7 +31,7 @@ export default function LoginPage() {
       //   email,
       //   password,
       // })
-      
+
       // Simulação de erro para demonstração (remover em produção)
       if (email === 'erro@exemplo.com') {
         throw new Error('E-mail ou senha incorretos.')
@@ -38,7 +39,7 @@ export default function LoginPage() {
 
       // Em produção: redirecionar para o dashboard
       console.log('Login:', { email, rememberMe })
-      
+
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao fazer login')
     } finally {
@@ -102,7 +103,7 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <Github className="mr-2 size-4" />
+            <BrandIcon icon={siGithub} className="mr-2 size-4" />
             Continuar com GitHub
           </Button>
 
@@ -113,7 +114,7 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <Chrome className="mr-2 size-4" />
+            <BrandIcon icon={siGoogle} className="mr-2 size-4" />
             Continuar com Google
           </Button>
         </div>

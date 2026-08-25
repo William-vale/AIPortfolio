@@ -4,7 +4,8 @@
 // Permite cadastro via OAuth (GitHub/Google) ou formulário de email/senha
 import { useState } from 'react'
 import Link from 'next/link'
-import { Github, Chrome } from 'lucide-react'
+import { siGoogle, siGithub } from "simple-icons";
+import { BrandIcon } from "@/components/ui/brand-icon";
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -57,7 +58,7 @@ export default function SignUpPage() {
 
       // Em produção: redirecionar para confirmação de email ou dashboard
       console.log('Cadastro:', { fullName, email })
-      
+
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao criar conta')
     } finally {
@@ -121,7 +122,7 @@ export default function SignUpPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <Github className="mr-2 size-4" />
+            <BrandIcon icon={siGithub} className="mr-2 size-4" />
             Continuar com GitHub
           </Button>
 
@@ -132,7 +133,7 @@ export default function SignUpPage() {
             disabled={isLoading}
             className="w-full"
           >
-            <Chrome className="mr-2 size-4" />
+            <BrandIcon icon={siGoogle} className="mr-2 size-4" />
             Continuar com Google
           </Button>
         </div>
