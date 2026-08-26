@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Check, FolderKanban, Globe2, Menu, Sparkles, UserRound, X } from 'lucide-react'
+import { ArrowRight, Check, FolderKanban, FileChartColumn, Globe2, Menu, Sparkles, UserRound, X, Bot, Link } from 'lucide-react'
 import { useState } from 'react'
 
 const features = [
@@ -18,6 +18,21 @@ const features = [
         icon: Globe2,
         title: 'Para recrutadores',
         text: 'Acesse o portfólio sem cadastro e receba uma versão contextualizada.',
+    },
+    {
+        icon: Bot,
+        title: 'Gerenciamento por IA',
+        text: 'Organiza suas informações para o contexto apresentado.',
+    },
+    {
+        icon: Link,
+        title: 'Compartilhamento',
+        text: 'Link para compartilhar com recrutador.',
+    },
+    {
+        icon: FileChartColumn,
+        title: 'Analise',
+        text: 'Seu portfolio mais valorizado para o Recrutador.',
     },
 ]
 
@@ -127,7 +142,7 @@ export default function Home() {
             <section id="como-funciona" className="bg-surface px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
                 <div className="mx-auto grid max-w-[1200px] gap-10 md:grid-cols-3 md:gap-8">
                     {features.map(({ icon: Icon, title, text }) => (
-                        <article key={title} className="border-t-2 border-primary-soft pt-5">
+                        <article key={title} className="border-t-2 border-primary-soft pt-5 mb-10">
                             <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-md bg-primary-pale text-primary" aria-hidden="true">
                                 <Icon size={20} strokeWidth={1.8} />
                             </div>
