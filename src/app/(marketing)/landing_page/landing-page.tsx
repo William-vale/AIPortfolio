@@ -159,7 +159,7 @@ export default function Home() {
                         Pronto para organizar sua apresentação profissional?
                     </h2>
                     <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                        <a href="#entrar" className="inline-flex h-11 items-center justify-center rounded-md bg-surface px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary-pale focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface">
+                        <a href="entrar" className="inline-flex h-11 items-center justify-center rounded-md bg-surface px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary-pale focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface">
                             Criar conta gratuitamente
                         </a>
                         <a href="#precos" className="inline-flex h-11 items-center justify-center rounded-md border border-surface px-5 text-sm font-semibold text-surface transition-colors hover:bg-surface/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface">
