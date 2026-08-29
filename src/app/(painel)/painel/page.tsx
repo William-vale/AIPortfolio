@@ -1,6 +1,8 @@
 import { BannerProximaAcao } from '@/modules/perfil'
 import { CardPublicacao } from '@/modules/publicacao'
-import { CardCota } from '@/modules/cobranca'/*
+import { CardCota, UpsellGeracoes } from '@/modules/cobranca'
+/*
+
 import { AtividadesRecentes } from '@/modules/identidade' */
 
 export default function PainelPage() {
@@ -20,6 +22,7 @@ export default function PainelPage() {
             <div className='grid gap-6 lg:grid-cols-2'>
                 <CardPublicacao />
                 <CardCota />
+                {/* <UpsellGeracoes /> */}
             </div>
         </div>
     )
