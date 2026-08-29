@@ -1,0 +1,1 @@
+export { CardPublicacao } from './ui/card-publicacao'

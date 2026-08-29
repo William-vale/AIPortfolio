@@ -1,0 +1,1 @@
+export { CardCota } from './ui/card-cota'
