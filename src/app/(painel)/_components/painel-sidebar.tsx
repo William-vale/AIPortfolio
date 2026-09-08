@@ -81,6 +81,27 @@ export function PainelNavMobile() {
     const pathname = usePathname()
 
     return (
-        <nav></nav>
+        <nav className="flex gap-1 overflow-x-auto border-b border-border bg-surface px-3 py-2 lg:hidden" aria-label="Navegação do Painel"
+        >
+            {itensNavegacao.map(({ href, label, icone: Icone }) => {
+                const ativo = usarItemAtivo(href, pathname)
+                return (
+                    <Link
+                        key={href}
+                        href={href}
+                        aria-current={ativo ? 'page' : undefined}
+                        className={cn(
+                            'flex h-9 shrink-0 items-center gap-2 rounded-md px-3 text-sm font-medium transition-colors',
+                            ativo
+                                ? 'bg-primary text-primary-foreground'
+                                : 'text-secondary hover:bg-subtle hover:text-foreground'
+                        )}
+                    >
+                        <Icone className="size-4 shrink-0" />
+                        {label}
+                    </Link>
+                )
+            })}
+        </nav>
     )
 }
