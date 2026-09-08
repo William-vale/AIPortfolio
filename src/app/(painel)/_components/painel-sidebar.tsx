@@ -6,7 +6,8 @@ import {
     LayoutDashboard,
     UserRound,
     Globe2,
-    CreditCard, Settings2,
+    CreditCard,
+    Settings2,
     type LucideIcon,
 } from 'lucide-react'
 
@@ -37,11 +38,11 @@ const itensNavegacao: ItemNavegacao[] = [
     },
 ]
 
-function usarItemAtivo(href: string, pathname: string) {
+function userItemAtivo(href: string, pathname: string) {
     if (href === '/painel') {
         return pathname === '/painel'
     }
-    return pathname === href || pathname.startsWith(`${href}/`)
+    return (pathname === href || pathname.startsWith(`${href}/`))
 }
 
 export function PainelSideBar() {
@@ -52,6 +53,7 @@ export function PainelSideBar() {
             <nav className="flex-1 space-y-1 p-4" aria-label="Navegação do Painel">
                 {itensNavegacao.map(({ href, label, icone: Icone }) => {
                     const ativo = userItemAtivo(href, pathname)
+
                     return (
                         <Link
                             key={href}

@@ -43,7 +43,7 @@ const atividadesPadrao: Atividade[] = [
     },
 ]
 
-export function Atividadesrecentes({
+export function AtividadesRecentes({
     atividades = atividadesPadrao,
 }: AtividadeRecentesProps) {
     return (

@@ -1,1 +1,1 @@
-export { Atividadesrecentes } from './ui/atividades-recentes'
+export { AtividadesRecentes } from './ui/atividades-recentes'
