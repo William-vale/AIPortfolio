@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 
 interface BannerProximaAcaoProps {
-    completude?: número
+    completude?: number
     href?: string
 }
 
