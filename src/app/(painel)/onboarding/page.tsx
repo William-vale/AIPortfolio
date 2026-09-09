@@ -17,7 +17,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Avatar } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { TagInput } from '@/components/ui/tag-input'
 import { ProgressBar } from '@/components/ui/progress'
 import { ProfilePreview } from '@/components/profile-preview'
@@ -173,10 +173,11 @@ export default function OnboardingPage() {
               <CardContent className="p-6 sm:p-8 space-y-8">
                 {/* Boas-vindas */}
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-bg-subtle">
-                  <Avatar 
-                    fallback={fullName ? fullName.charAt(0).toUpperCase() : 'C'}
-                    className="size-10"
-                  />
+                  <Avatar className="size-10">
+                    <AvatarFallback className="bg-primary-pale text-sm font-semibold text-primary">
+                      {fullName ? fullName.charAt(0).toUpperCase() : 'C'}
+                    </AvatarFallback>
+                  </Avatar>
                   <span className="font-medium text-foreground">
                     Bem-vinda, {fullName.split(' ')[0] || 'Camila'} 👋
                   </span>
