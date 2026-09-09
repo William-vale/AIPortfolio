@@ -37,11 +37,11 @@ export function ProfilePreview({
 
       {/* Conteúdo do perfil */}
       <div className="space-y-3">
-        <Avatar 
-          fallback={initials}
-          className="size-16 border-2 border-border"
-        />
-        
+      <Avatar className="size-16 border-2 border-border">
+        <AvatarFallback className="bg-primary-pale text-base font-semibold text-primary">
+          {initials}
+        </AvatarFallback>
+      </Avatar>        
         <div className="space-y-1">
           <h3 className="text-lg font-semibold text-foreground font-heading">
             {fullName || 'Seu Nome'}
