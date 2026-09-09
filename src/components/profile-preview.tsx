@@ -1,5 +1,5 @@
 import { MapPin } from 'lucide-react'
-import { Avatar } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 
 interface ProfilePreviewProps {
